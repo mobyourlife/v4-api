@@ -3,6 +3,8 @@ var restify = require('restify'),
 	package = require('./package'),
 	about = require('./controllers/about');
 
+var port = process.env.PORT || 8080;
+
 var server = restify.createServer({
 	name: package.name,
 	version: package.version
