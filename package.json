@@ -18,5 +18,8 @@
   ],
   "author": "Filipe Oliveira <contato@fmoliveira.com.br>",
   "license": "Apache-2.0",
-  "homepage": "https://bitbucket.org/mobyourlife/api#readme"
+  "homepage": "https://bitbucket.org/mobyourlife/api#readme",
+  "dependencies": {
+    "restify": "^4.0.3"
+  }
 }
