@@ -7,7 +7,11 @@ var test = require('tape'),
 const DEFAULT_FANPAGE = '1446731825581145';
 
 test('Setup', (t) => {
-	mongoose.connect(process.env.MOBYOURLIFE_DATABASE);
+	if (process.env.MOBYOURLIFE_DATABASE) {
+		mongoose.connect(process.env.MOBYOURLIFE_DATABASE);
+	} else {
+		t.fail('Database connection string not supplied!');
+	}
 	t.end();
 });
 
