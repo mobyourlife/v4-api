@@ -4,7 +4,7 @@
   "description": "RESTful API for Mob Your Life.",
   "main": "index.js",
   "scripts": {
-    "test": "node node_modules/mocha/bin/mocha test/*"
+    "test": "node node_modules/tape/bin/tape test/*"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,6 @@
     "restify": "^4.0.3"
   },
   "devDependencies": {
-    "mocha": "^2.3.3",
-    "should": "^7.1.0"
+    "tape": "^4.2.1"
   }
 }
