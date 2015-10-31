@@ -4,11 +4,14 @@ var test = require('tape'),
 	mongoose = require('mongoose'),
 	about = require('../lib/about');
 
+const DEFAULT_DATABASE = 'mongodb://localhost:27017/mobyourlife';
 const DEFAULT_FANPAGE = '1446731825581145';
 
+var database = process.env.MOBYOURLIFE_DATABASE || DEFAULT_DATABASE;
+
 test('Setup', (t) => {
-	if (process.env.MOBYOURLIFE_DATABASE) {
-		mongoose.connect(process.env.MOBYOURLIFE_DATABASE);
+	if (database) {
+		mongoose.connect(database);
 	} else {
 		t.fail('Database connection string not supplied!');
 	}
