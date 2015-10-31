@@ -20,6 +20,7 @@
   "license": "Apache-2.0",
   "homepage": "https://bitbucket.org/mobyourlife/api#readme",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "mongoose": "^4.1.11",
     "restify": "^4.0.3"
   },
