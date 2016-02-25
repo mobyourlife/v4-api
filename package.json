@@ -4,7 +4,8 @@
   "description": "Private API for Mob.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run test:lint",
+    "test:lint": "node node_modules/.bin/standard"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/mobyourlife/v4-api/issues"
   },
-  "homepage": "https://github.com/mobyourlife/v4-api#readme"
+  "homepage": "https://github.com/mobyourlife/v4-api#readme",
+  "devDependencies": {
+    "standard": "^6.0.7"
+  }
 }
