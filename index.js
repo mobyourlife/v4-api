@@ -37,13 +37,18 @@ server.register([
   {
     register: Swagger,
     options: options
-  }], (err) => {
-    // Start the server
-    server.start((err) => {
-      if (err) {
-        throw err
-      } else {
-        console.log(`API listening on ${server.info.uri}`)
-      }
-    })
+  }
+], (err) => {
+  if (err) {
+    throw err
+  }
+
+  // Start the server
+  server.start((err) => {
+    if (err) {
+      throw err
+    }
+
+    console.log(`API listening on ${server.info.uri}`)
   })
+})
