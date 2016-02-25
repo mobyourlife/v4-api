@@ -1,0 +1,25 @@
+{
+  "name": "mob-api",
+  "version": "4.0.0",
+  "description": "Private API for Mob.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mobyourlife/v4-api.git"
+  },
+  "keywords": [
+    "api",
+    "mob",
+    "your",
+    "life"
+  ],
+  "author": "Filipe Oliveira <contato@fmoliveira.com.br>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/mobyourlife/v4-api/issues"
+  },
+  "homepage": "https://github.com/mobyourlife/v4-api#readme"
+}
