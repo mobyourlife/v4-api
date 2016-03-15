@@ -8,7 +8,7 @@ const port = process.env.PORT || 3000
 const restify = require('restify')
 const bunyan = require('bunyan')
 
-// Setup logging
+// Initialise logging
 const log = bunyan.createLogger({
   name: info.name
 })
@@ -20,10 +20,34 @@ var server = restify.createServer({
   log :log
 })
 
+// Logging format
+const requestLog = (req) => {
+  let data = {
+    headers: req.headers,
+    method: req.method,
+    url: req.url,
+    statusCode: req.statusCode,
+    statusMessage: req.statusMessage
+  }
+  return data
+}
+
+// Log requests
+server.pre((req, res, next) => {
+  req.log.info(requestLog(req), 'start')
+  return next()
+})
+
+// Log responses
+server.on('after', (req, res, next) => {
+  req.log.info(requestLog(res), 'finished')
+  return next()
+})
+
 // Setup routing
 server.get('/hello', (req, res, next) => {
   res.send({ message: 'It works!' })
-  next()
+  return next()
 })
 
 // Start listening Restify
