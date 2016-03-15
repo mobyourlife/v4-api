@@ -1,6 +1,6 @@
 'use strict'
 
-const Joi = require('joi')
+const Std = require('../lib/standard')
 
 module.exports = [
   // List all registered users
@@ -12,12 +12,8 @@ module.exports = [
       description: 'List all registered users.',
       validate: {
         params: {
-          offset: Joi.number()
-            .default(0)
-            .description('Which index to start reading.'),
-          limit: Joi.number()
-            .default(10)
-            .description('How many users to read at a time.')
+          offset: Std.Fields.offset,
+          limit: Std.Fields.limit
         }
       },
       handler: (req, reply) => {
