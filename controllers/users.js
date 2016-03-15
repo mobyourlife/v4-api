@@ -2,6 +2,10 @@
 
 const Std = require('../lib/standard')
 
+const response = Joi.object({
+  id: Std.Fields.id
+})
+
 module.exports = [
   // List all registered users
   {
@@ -9,7 +13,7 @@ module.exports = [
     path: '/users',
     config: {
       tags: [ 'api' ],
-      description: 'List all registered users.',
+      description: 'Lista todos os usuários cadastrados.',
       validate: {
         params: {
           offset: Std.Fields.offset,
