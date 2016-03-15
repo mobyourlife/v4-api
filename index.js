@@ -3,10 +3,12 @@
 // Load settings
 const info = require('./package')
 const port = process.env.PORT || 3000
+const database = process.env.DATABASE || 'mongodb://localhost:27017/mobyourlife'
 
 // Load modules
 const restify = require('restify')
 const bunyan = require('bunyan')
+const mongoose = require('mongoose')
 
 // Initialise logging
 const log = bunyan.createLogger({
@@ -22,6 +24,9 @@ var server = restify.createServer({
 
 // Log all requests
 server.on('after', restify.auditLogger({ log: log }))
+
+// Connect to the database
+mongoose.connect(database)
 
 // Setup routing
 server.get('/hello', (req, res, next) => {

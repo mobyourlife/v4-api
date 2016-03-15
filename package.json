@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "bunyan": "^1.7.1",
+    "mongoose": "^4.4.7",
     "restify": "^4.0.4"
   }
 }
