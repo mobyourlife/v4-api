@@ -26,5 +26,9 @@
   "homepage": "https://github.com/mobyourlife/v4-api#readme",
   "devDependencies": {
     "standard": "^6.0.7"
+  },
+  "dependencies": {
+    "bunyan": "^1.7.1",
+    "restify": "^4.0.4"
   }
 }
