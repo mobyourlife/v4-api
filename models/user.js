@@ -12,7 +12,24 @@ var UserSchema = new mongoose.Schema({
   // Social logins
   social: {
     facebook: {
-      token: String
+      user_token: String,
+      fanpages: [
+        {
+          _id: false,
+          id: { type: String, required: true, index: true },
+          name: String,
+          access_token: String,
+          category: String,
+          category_list: [
+            {
+              _id: false,
+              id: String,
+              name: String
+            }
+          ],
+          permissions: [String]
+        }
+      ]
     }
   }
 })
