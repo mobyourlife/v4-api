@@ -17,7 +17,7 @@ const log = bunyan.createLogger({
 var server = restify.createServer({
   name: info.name,
   version: info.version,
-  log :log
+  log: log
 })
 
 // Log all requests
