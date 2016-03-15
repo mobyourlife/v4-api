@@ -1,7 +1,7 @@
 {
   "name": "mob-api",
   "version": "4.0.0",
-  "description": "Private API for Mob.",
+  "description": "API de desenvolvimento do Mob Your Life.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",

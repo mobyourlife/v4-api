@@ -26,8 +26,15 @@ server.route(routes)
 const options = {
   info: {
     title: Package.description,
-    version: Package.version
-  }
+    version: Package.version,
+    contact: {
+      name: 'Mob Your Life',
+      url: 'https://www.mobyourlife.com.br',
+      email: 'suporte@mobyourlife.com.br'
+    }
+  },
+  documentationPath: '/swagger',
+  lang: 'pt'
 }
 
 // Register server plugins
