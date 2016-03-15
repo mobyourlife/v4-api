@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "test": "npm run test:lint",
-    "test:lint": "node node_modules/.bin/standard"
+    "test:lint": "standard"
   },
   "repository": {
     "type": "git",
