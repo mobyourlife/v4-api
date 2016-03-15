@@ -32,7 +32,7 @@ var UserSchema = new mongoose.Schema({
 
           // Page token and permissions
           access_token: String,
-          permissions: [String]
+          permissions: [String],
 
           // Page categories
           category: String,
