@@ -1,7 +1,7 @@
 # API
 [![Travis Build][travis-image]][travis-url]
 
-Private API for Mob.
+API de desenvolvimento do Mob Your Life.
 
 # License
 Apache 2.0.
