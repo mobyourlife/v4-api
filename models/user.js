@@ -6,6 +6,10 @@ var UserSchema = new mongoose.Schema({
   // Local account
   email: { type: String, unique: true, required: true },
 
+  // Date events
+  created_time: Date,
+  updated_time: Date,
+
   // Password is optional because social login may be primary
   password: String,
 
@@ -13,6 +17,8 @@ var UserSchema = new mongoose.Schema({
   social: {
     facebook: {
       user_token: String,
+      created_time: Date,
+      updated_time: Date,
       fanpages: [
         {
           _id: false,
