@@ -16,15 +16,25 @@ var UserSchema = new mongoose.Schema({
   // Social logins
   social: {
     facebook: {
+      // Personal user token
       user_token: String,
+
+      // Date events
       created_time: Date,
       updated_time: Date,
+
+      // Fanpages list
       fanpages: [
         {
           _id: false,
           id: { type: String, required: true, index: true },
           name: String,
+
+          // Page token and permissions
           access_token: String,
+          permissions: [String]
+
+          // Page categories
           category: String,
           category_list: [
             {
@@ -32,8 +42,7 @@ var UserSchema = new mongoose.Schema({
               id: String,
               name: String
             }
-          ],
-          permissions: [String]
+          ]
         }
       ]
     }
