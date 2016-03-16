@@ -19,10 +19,10 @@ const SiteSchema = new Schema({
   domains: [
     {
       // FQDN, even if mob subdomain (e.g. coruscant.meusitemob.com.br)
-      fqdn: String,
+      fqdn: { type: String, required: true },
 
       // All requests will be redirected to the primary domain
-      primary: Boolean,
+      primary: { type: Boolean, required: true },
 
       // SSL certificates
       ssl: {
@@ -45,9 +45,9 @@ const SiteSchema = new Schema({
       // Keep track of DNS records to popup misconfiguration warnings
       records: [
         {
-          type: String,
-          name: String,
-          value: String
+          type: { type: String, required: true },
+          name: { type: String, required: true },
+          value: { type: String, required: true }
         }
       ]
     }
