@@ -57,8 +57,10 @@ const SiteSchema = new Schema({
   sources: {
     facebook: {
       fanpages: [
-        _id :false,
-        id: { type: String, required: true }
+        {
+          _id: false,
+          id: { type: String, required: true }
+        }
       ]
     }
   }
