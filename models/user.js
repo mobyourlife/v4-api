@@ -1,14 +1,15 @@
 'use strict'
 
 const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
-var UserSchema = new mongoose.Schema({
+var UserSchema = new Schema({
   // Local account
   email: { type: String, unique: true, required: true },
 
   // Date events
-  created_time: Date,
-  updated_time: Date,
+  createdTime: Date,
+  updatedTime: Date,
 
   // Password is optional because social login may be primary
   password: String,
@@ -17,26 +18,26 @@ var UserSchema = new mongoose.Schema({
   social: {
     facebook: {
       // Personal user token
-      user_token: String,
+      userToken: String,
 
       // Date events
-      created_time: Date,
-      updated_time: Date,
+      createdTime: Date,
+      updatedTime: Date,
 
       // Fanpages list
       fanpages: [
         {
           _id: false,
-          id: { type: String, required: true, index: true },
+          id: { type: String, required: true },
           name: String,
 
           // Page token and permissions
-          access_token: String,
+          accessToken: String,
           permissions: [String],
 
           // Page categories
           category: String,
-          category_list: [
+          categoryList: [
             {
               _id: false,
               id: String,

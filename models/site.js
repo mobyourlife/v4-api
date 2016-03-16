@@ -1,14 +1,15 @@
 'use strict'
 
 const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
-var SiteSchema = new mongoose.Schema({
+var SiteSchema = new Schema({
   // Basic info
   name: { type: String, required: true },
 
   // Date events
-  created_time: Date,
-  updated_time: Date,
+  createdTime: Date,
+  updatedTime: Date,
 
   // Search engine optimisation
   description: String,
@@ -28,9 +29,9 @@ var SiteSchema = new mongoose.Schema({
         enabled: Boolean,
         certificates: [
           {
-            issued_by: String,
-            issued_time: Date,
-            expiration_time: Date,
+            issuedBy: String,
+            issuedTime: Date,
+            expirationTime: Date,
             path: String,
             chksum: String
           }
@@ -38,8 +39,8 @@ var SiteSchema = new mongoose.Schema({
       },
 
       // Date events
-      created_time: Date,
-      updated_time: Date,
+      createdTime: Date,
+      updatedTime: Date,
 
       // Keep track of DNS records to popup misconfiguration warnings
       records: [
@@ -50,7 +51,17 @@ var SiteSchema = new mongoose.Schema({
         }
       ]
     }
-  ]
+  ],
+
+  // Data sources
+  sources: {
+    facebook: {
+      fanpages: [
+        _id :false,
+        id: { type: String, required: true }
+      ]
+    }
+  }
 })
 
 module.exports = mongoose.model('Site', SiteSchema)
