@@ -21,6 +21,11 @@ const SiteSchema = new Schema({
       // FQDN, even if mob subdomain (e.g. coruscant.meusitemob.com.br)
       fqdn: { type: String, required: true },
 
+      // Date events
+      createdTime: Date,
+      updatedTime: Date,
+      expiresTime: Date,
+
       // All requests will be redirected to the primary domain
       primary: { type: Boolean, required: true },
 
@@ -37,10 +42,6 @@ const SiteSchema = new Schema({
           }
         ]
       },
-
-      // Date events
-      createdTime: Date,
-      updatedTime: Date,
 
       // Keep track of DNS records to popup misconfiguration warnings
       records: [
