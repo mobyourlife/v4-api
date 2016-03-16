@@ -28,11 +28,11 @@ server.on('after', restify.auditLogger({ log: log }))
 // Connect to the database
 mongoose.connect(database)
 
+// Load controllers
+const users = require('./controllers/users')
+
 // Setup routing
-server.get('/hello', (req, res, next) => {
-  res.send({ message: 'It works!' })
-  return next()
-})
+server.get('/users', users.index)
 
 // Start listening Restify
 server.listen(port, () => {
