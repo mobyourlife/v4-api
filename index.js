@@ -36,6 +36,9 @@ const sites = require('./controllers/sites')
 server.get('/sites', sites.index)
 server.get('/sites/:id', sites.get)
 
+const contents = require('./controllers/contents')
+server.get('/contents', contents.index)
+
 // Start listening Restify
 server.listen(port, () => {
   log.info(`${server.name} listening at ${server.url}`)
