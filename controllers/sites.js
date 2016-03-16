@@ -14,4 +14,12 @@ ctrl.index = (req, res, next) => {
   })
 }
 
+ctrl.get = (req, res, next) => {
+  Site.findOne({ _id: req.params.id }, (err, site) => {
+    if (err) throw err
+    res.send(site)
+    return next()
+  })
+}
+
 module.exports = ctrl
