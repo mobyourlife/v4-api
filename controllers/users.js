@@ -6,13 +6,13 @@ var ctrl = {}
 
 // Index controller will list all registered users
 ctrl.index = (req, res, next) => {
-  Users.list().then((users) => {
-    res.send(users)
-    return next()
-  }, (err) => {
-    res.status(500).send(err)
-    return next()
-  })
+  let success = (users) => res.send(users)
+  let failure = (err) => res.status(500).send(err)
+
+  Users.list()
+    .then(success)
+    .catch(failure)
+    .then(next)
 }
 
 module.exports = ctrl
