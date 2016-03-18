@@ -5,6 +5,7 @@ const Site = require('../models/site')
 // Exported functions
 module.exports = {
   list: ListSites,
+  get: GetSite,
   create: CreateSite,
   update: UpdateSite,
   delete: DeleteSite
