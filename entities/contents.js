@@ -91,5 +91,15 @@ function UpdateContent (contentId, contentData) {
  * @param {String} contentId ID of the content to be deleted.
  */
 function DeleteContent (contentId) {
-  //
+  let promise = new Promise((resolve, reject) => {
+    User.findByIdAndRemove(contentId, (err) => {
+      if (err) {
+        reject(err)
+      } else {
+        resolve()
+      }
+    })
+  })
+
+  return promise
 }
