@@ -2,14 +2,17 @@
 
 const mongoose = require('mongoose')
 
-const User = require('../models/user')
+const Users = require('../lib/entities/users')
 
 var ctrl = {}
 
+// Index controller will list all registered users
 ctrl.index = (req, res, next) => {
-  User.find((err, users) => {
-    if (err) throw err
+  Users.list().then((users) => {
     res.send(users)
+    return next()
+  }, (err) => {
+    res.status(500).send(err)
     return next()
   })
 }
