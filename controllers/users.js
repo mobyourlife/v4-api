@@ -4,7 +4,7 @@ const Users = require('../entities/users')
 
 var ctrl = {}
 
-// Index controller will list all registered users
+// List all registered users
 ctrl.index = (req, res, next) => {
   let success = (users) => res.send(users)
   let failure = (err) => res.status(500).send(err)
