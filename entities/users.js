@@ -91,5 +91,15 @@ function UpdateUser (userId, userData) {
  * @param {String} userId ID of the user to be deleted.
  */
 function DeleteUser (userId) {
-  //
+  let promise = new Promise((resolve, reject) => {
+    User.findByIdAndRemove(userId, (err) => {
+      if (err) {
+        reject(err)
+      } else {
+        resolve()
+      }
+    })
+  })
+
+  return promise
 }
