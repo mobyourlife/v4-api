@@ -73,7 +73,17 @@ function CreateUser (userData) {
  * @param {Object} userData User data to be updated.
  */
 function UpdateUser (userId, userData) {
-  //
+  let promise = new Promise((resolve, reject) => {
+    User.update({ id: siteId }, userData, { upsert: true }, (err) => {
+      if (err) {
+        reject(err)
+      } else {
+        resolve(userData)
+      }
+    })
+  })
+
+  return promise
 }
 
 /**
