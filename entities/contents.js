@@ -73,7 +73,17 @@ function CreateContent (contentData) {
  * @param {Object} contentData Content data to be updated.
  */
 function UpdateContent (contentId, contentData) {
-  //
+  let promise = new Promise((resolve, reject) => {
+    Content.update({ id: contentId }, contentData, { upsert: true }, (err) => {
+      if (err) {
+        reject(err)
+      } else {
+        resolve(contentData)
+      }
+    })
+  })
+
+  return promise
 }
 
 /**
