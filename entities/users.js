@@ -36,7 +36,7 @@ function ListUsers (filter, select) {
  */
 function GetUser (userId) {
   let promise = new Promise((resolve, reject) => {
-    User.findOne({ id: siteId }, (err, row) => {
+    User.findOne({ id: userId }, (err, row) => {
       if (err) {
         reject(err)
       } else {
@@ -74,7 +74,7 @@ function CreateUser (userData) {
  */
 function UpdateUser (userId, userData) {
   let promise = new Promise((resolve, reject) => {
-    User.update({ id: siteId }, userData, { upsert: true }, (err) => {
+    User.update({ id: userId }, userData, { upsert: true }, (err) => {
       if (err) {
         reject(err)
       } else {
