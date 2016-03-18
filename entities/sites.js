@@ -90,5 +90,15 @@ function UpdateSite (siteId, siteData) {
  * @param {String} siteId ID of the site to be deleted.
  */
 function DeleteSite (siteId) {
-  //
+  let promise = new Promise((resolve, reject) => {
+    Site.findByIdAndRemove(siteId, (err, stats) => {
+      if (err) {
+        reject(err)
+      } else {
+        resolve()
+      }
+    })
+  })
+
+  return promise
 }
