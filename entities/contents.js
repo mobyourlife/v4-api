@@ -54,7 +54,7 @@ function GetContent (contentId) {
  */
 function CreateContent (contentData) {
   let promise = new Promise((resolve, reject) => {
-    var newContent = new User(contentData)
+    var newContent = new Content(contentData)
     newContent.save((err) => {
       if (err) {
         reject(err)
