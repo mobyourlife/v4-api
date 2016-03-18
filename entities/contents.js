@@ -1,6 +1,6 @@
 'use strict'
 
-const Content = require('../../models/content')
+const Content = require('../models/content')
 
 // Exported functions
 module.exports = {

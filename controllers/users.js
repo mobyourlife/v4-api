@@ -2,7 +2,7 @@
 
 const mongoose = require('mongoose')
 
-const Users = require('../lib/entities/users')
+const Users = require('../entities/users')
 
 var ctrl = {}
 

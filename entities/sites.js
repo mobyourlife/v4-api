@@ -1,6 +1,6 @@
 'use strict'
 
-const Site = require('../../models/site')
+const Site = require('../models/site')
 
 // Exported functions
 module.exports = {
