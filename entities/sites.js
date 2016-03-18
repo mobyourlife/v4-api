@@ -34,7 +34,18 @@ function ListSites (filter, select) {
  * @param {Object} siteData Site data to be created.
  */
 function CreateSite (siteData) {
-  //
+  let promise = new Promise((resolve, reject) => {
+    var newSite = new Site(siteData)
+    newSite.save((err) => {
+      if (err) {
+        reject(err)
+      } else {
+        resolve(newSite)
+      }
+    })
+  })
+
+  return promise
 }
 
 /**
