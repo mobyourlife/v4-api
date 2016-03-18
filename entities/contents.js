@@ -92,7 +92,7 @@ function UpdateContent (contentId, contentData) {
  */
 function DeleteContent (contentId) {
   let promise = new Promise((resolve, reject) => {
-    User.findByIdAndRemove(contentId, (err) => {
+    Content.findByIdAndRemove(contentId, (err) => {
       if (err) {
         reject(err)
       } else {
