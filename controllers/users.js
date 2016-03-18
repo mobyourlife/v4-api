@@ -2,10 +2,12 @@
 
 const Users = require('../entities/users')
 
-var ctrl = {}
+module.exports = {
+  index: Index
+}
 
 // List all registered users
-ctrl.index = (req, res, next) => {
+function Index (req, res, next) {
   let success = (users) => res.send(users)
   let failure = (err) => res.status(500).send(err)
 
@@ -14,5 +16,3 @@ ctrl.index = (req, res, next) => {
     .catch(failure)
     .then(next)
 }
-
-module.exports = ctrl
