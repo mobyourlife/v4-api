@@ -73,7 +73,7 @@ function CreateSite (siteData) {
  */
 function UpdateSite (siteId, siteData) {
   let promise = new Promise((resolve, reject) => {
-    Site.update({ id: siteId }, sitedata, { upsert: true }, (err, stats) => {
+    Site.update({ id: siteId }, sitedata, { upsert: true }, (err) => {
       if (err) {
         reject(err)
       } else {
@@ -91,7 +91,7 @@ function UpdateSite (siteId, siteData) {
  */
 function DeleteSite (siteId) {
   let promise = new Promise((resolve, reject) => {
-    Site.findByIdAndRemove(siteId, (err, stats) => {
+    Site.findByIdAndRemove(siteId, (err) => {
       if (err) {
         reject(err)
       } else {
