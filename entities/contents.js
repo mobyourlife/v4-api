@@ -53,7 +53,18 @@ function GetContent (contentId) {
  * @param {Object} contentData Content data to be created.
  */
 function CreateContent (contentData) {
-  //
+  let promise = new Promise((resolve, reject) => {
+    var newContent = new User(contentData)
+    newContent.save((err) => {
+      if (err) {
+        reject(err)
+      } else {
+        resolve(newContent)
+      }
+    })
+  })
+
+  return promise
 }
 
 /**
