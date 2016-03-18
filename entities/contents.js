@@ -5,6 +5,7 @@ const Content = require('../models/content')
 // Exported functions
 module.exports = {
   list: ListContents,
+  get: GetContent,
   create: CreateContent,
   update: UpdateContent,
   delete: DeleteContent
@@ -22,6 +23,24 @@ function ListContents (filter, select) {
         reject(err)
       } else {
         resolve(rows)
+      }
+    })
+  })
+
+  return promise
+}
+
+/**
+ * Get details of a given content.
+ * @param {String} userId ID of the content to be queried.
+ */
+function GetContent (contentId) {
+  let promise = new Promise((resolve, reject) => {
+    Content.findOne({ id: contentId }, (err, row) => {
+      if (err) {
+        reject(err)
+      } else {
+        resolve(row)
       }
     })
   })
