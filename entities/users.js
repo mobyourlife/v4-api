@@ -53,7 +53,18 @@ function GetUser (userId) {
  * @param {Object} userData User data to be created.
  */
 function CreateUser (userData) {
-  //
+  let promise = new Promise((resolve, reject) => {
+    var newUser = new User(userData)
+    newUser.save((err) => {
+      if (err) {
+        reject(err)
+      } else {
+        resolve(newUser)
+      }
+    })
+  })
+
+  return promise
 }
 
 /**
