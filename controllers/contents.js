@@ -1,7 +1,5 @@
 'use strict'
 
-const mongoose = require('mongoose')
-
 const Content = require('../models/content')
 
 var ctrl = {}

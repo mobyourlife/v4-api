@@ -1,7 +1,5 @@
 'use strict'
 
-const mongoose = require('mongoose')
-
 const Users = require('../entities/users')
 
 var ctrl = {}
