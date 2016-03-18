@@ -5,6 +5,7 @@ const User = require('../models/user')
 // Exported functions
 module.exports = {
   list: ListUsers,
+  get: GetUser,
   create: CreateUser,
   update: UpdateUser,
   delete: DeleteUser
@@ -22,6 +23,24 @@ function ListUsers (filter, select) {
         reject(err)
       } else {
         resolve(rows)
+      }
+    })
+  })
+
+  return promise
+}
+
+/**
+ * Get details of a given user.
+ * @param {String} userId ID of the user to be queried.
+ */
+function GetUser (userId) {
+  let promise = new Promise((resolve, reject) => {
+    User.findOne({ id: siteId }, (err, row) => {
+      if (err) {
+        reject(err)
+      } else {
+        resolve(row)
       }
     })
   })
