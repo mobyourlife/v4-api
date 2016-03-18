@@ -72,7 +72,17 @@ function CreateSite (siteData) {
  * @param {Object} siteData Site data to be updated.
  */
 function UpdateSite (siteId, siteData) {
-  //
+  let promise = new Promise((resolve, reject) => {
+    Site.update({ id: siteId }, sitedata, { upsert: true }, (err, stats) => {
+      if (err) {
+        reject(err)
+      } else {
+        resolve(siteData)
+      }
+    })
+  })
+
+  return promise
 }
 
 /**
