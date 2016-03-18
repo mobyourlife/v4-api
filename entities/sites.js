@@ -30,6 +30,24 @@ function ListSites (filter, select) {
 }
 
 /**
+ * Get details of a given website.
+ * @param {String} siteId ID of the site to be queried.
+ */
+function GetSite (siteId) {
+  let promise = new Promise((resolve, reject) => {
+    Site.findOne({ id: siteId }, (err, row) => {
+      if (err) {
+        reject(err)
+      } else {
+        resolve(row)
+      }
+    })
+  })
+
+  return promise
+}
+
+/**
  * Create a new website.
  * @param {Object} siteData Site data to be created.
  */
