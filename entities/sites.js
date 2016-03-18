@@ -16,7 +16,17 @@ module.exports = {
  * @param {Object} select Fields to be selected from the query.
  */
 function ListSites (filter, select) {
-  //
+  let promise = new Promise((resolve, reject) => {
+    Site.find(filter, select, (err, rows) => {
+      if (err) {
+        reject(err)
+      } else {
+        resolve(rows)
+      }
+    })
+  })
+
+  return promise
 }
 
 /**
