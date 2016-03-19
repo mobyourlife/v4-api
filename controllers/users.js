@@ -1,7 +1,7 @@
 'use strict'
 
 // Load users entity
-const Users = require('../entities/users')
+const Users = require('../data/users')
 
 // Exported controllers
 module.exports = {
