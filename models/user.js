@@ -5,6 +5,7 @@ const Schema = mongoose.Schema
 
 const UserSchema = new Schema({
   // Local account
+  name: String,
   email: { type: String, unique: true, required: true },
 
   // Date events
@@ -17,6 +18,9 @@ const UserSchema = new Schema({
   // Social logins
   social: {
     facebook: {
+      name: String,
+      email: String,
+
       // Personal user token
       userToken: String,
 
