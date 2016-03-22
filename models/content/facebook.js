@@ -1,8 +1,7 @@
 // Content schema for Facebook
 
 module.exports = {
-  _id: false,
-  id: { type: String, required: true },
+  _id: { type: Number, required: true },
 
   // Content type
   contentType: String, // post, album, photo, video
@@ -18,8 +17,7 @@ module.exports = {
 
   // Post
   post: {
-    _id: false,
-    id: { type: String, required: true },
+    _id: { type: Number, required: true },
 
     // Post message
     message: String,
@@ -42,8 +40,7 @@ module.exports = {
 
   // Album
   album: {
-    _id: false,
-    id: { type: String, required: true },
+    _id: { type: Number, required: true },
 
     // Album info
     name: String,
@@ -58,8 +55,7 @@ module.exports = {
 
   // Photo
   photo: {
-    _id: false,
-    id: { type: String, required: true },
+    _id: { type: Number, required: true },
 
     // Photo info
     albumId: String,
@@ -82,8 +78,7 @@ module.exports = {
 
   // Video
   video: {
-    _id: false,
-    id: { type: String, required: true },
+    _id: { type: Number, required: true },
 
     // Video info
     title: String,

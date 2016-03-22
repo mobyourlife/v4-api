@@ -31,8 +31,7 @@ const UserSchema = new Schema({
       // Fanpages list
       fanpages: [
         {
-          _id: false,
-          id: { type: String, required: true },
+          _id: { type: Number, required: true },
           name: String,
 
           // Page token and permissions
@@ -43,8 +42,7 @@ const UserSchema = new Schema({
           category: String,
           categoryList: [
             {
-              _id: false,
-              id: String,
+              _id: String,
               name: String
             }
           ]

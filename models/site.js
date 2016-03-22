@@ -15,11 +15,27 @@ const SiteSchema = new Schema({
   description: String,
   keywords: String,
 
+  // Basic info about the website
+  info: {
+    location: {
+      address: String,
+      parking: {
+        lot: Number,
+        street: Number,
+        valet: Number
+      }
+    },
+
+    company: {
+      founded: String,
+    }
+  },
+
   // Site domains list
   domains: [
     {
       // FQDN, even if mob subdomain (e.g. coruscant.meusitemob.com.br)
-      fqdn: { type: String, required: true },
+      _id: { type: String, required: true },
 
       // All requests will be redirected to the primary domain
       primary: { type: Boolean, required: true },
@@ -59,8 +75,7 @@ const SiteSchema = new Schema({
     facebook: {
       fanpages: [
         {
-          _id: false,
-          id: { type: String, required: true },
+          _id: { type: Number, required: true },
 
           // Latest sync event dates
           latestSync: {
