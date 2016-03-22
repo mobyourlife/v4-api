@@ -18,6 +18,8 @@ const UserSchema = new Schema({
   // Social logins
   social: {
     facebook: {
+      _id: { type: Number, requied: true },
+
       name: String,
       email: String,
 
@@ -42,7 +44,7 @@ const UserSchema = new Schema({
           category: String,
           categoryList: [
             {
-              _id: String,
+              _id: Number,
               name: String
             }
           ]
