@@ -2,7 +2,10 @@
 
 module.exports = {
   // Content type
-  contentType: String, // post, album, photo, video
+  contentType: {
+    type: String,
+    enum: ['post', 'album', 'photo', 'video']
+  },
 
   // Date events
   createdTime: Date,
