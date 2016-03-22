@@ -27,7 +27,7 @@ const SiteSchema = new Schema({
     },
 
     company: {
-      founded: String,
+      founded: String
     }
   },
 
