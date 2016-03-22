@@ -18,7 +18,7 @@ const UserSchema = new Schema({
   // Social logins
   social: {
     facebook: {
-      _id: { type: Number, requied: true },
+      _id: { type: String, requied: true },
 
       name: String,
       email: String,
@@ -33,7 +33,7 @@ const UserSchema = new Schema({
       // Fanpages list
       fanpages: [
         {
-          _id: { type: Number, required: true },
+          _id: { type: String, required: true },
           name: String,
 
           // Page token and permissions
@@ -44,7 +44,7 @@ const UserSchema = new Schema({
           category: String,
           categoryList: [
             {
-              _id: Number,
+              _id: { type: String, required: true },
               name: String
             }
           ]

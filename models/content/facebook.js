@@ -19,7 +19,7 @@ module.exports = {
 
   // Post
   post: {
-    _id: { type: Number, required: true },
+    _id: { type: String, required: true },
 
     // Post message
     message: String,
@@ -45,7 +45,7 @@ module.exports = {
 
   // Album
   album: {
-    _id: { type: Number, required: true },
+    _id: { type: String, required: true },
 
     // Album info
     name: String,
@@ -63,7 +63,7 @@ module.exports = {
 
   // Photo
   photo: {
-    _id: { type: Number, required: true },
+    _id: { type: String, required: true },
 
     // Photo info
     albumId: String,
@@ -86,7 +86,7 @@ module.exports = {
 
   // Video
   video: {
-    _id: { type: Number, required: true },
+    _id: { type: String, required: true },
 
     // Video info
     title: String,

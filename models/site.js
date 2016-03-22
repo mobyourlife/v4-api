@@ -75,7 +75,7 @@ const SiteSchema = new Schema({
     facebook: {
       fanpages: [
         {
-          _id: { type: Number, required: true },
+          _id: { type: String, required: true },
 
           // Latest sync event dates
           latestSync: {
