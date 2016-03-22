@@ -8,7 +8,10 @@ const FacebookSchema = require('./facebook')
 const ContentSchema = new Schema({
   // From which social network this content came from
   // facebook, instagram, linkedin, twitter
-  sourceType: String,
+  sourceType: {
+    type: String,
+    enum: ['facebook']
+  },
 
   // Content schema for Facebook
   facebook: FacebookSchema

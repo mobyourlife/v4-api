@@ -1,14 +1,13 @@
 // Content schema for Facebook
 
 module.exports = {
-  _id: { type: Number, required: true },
-
   // Content type
   contentType: String, // post, album, photo, video
 
   // Date events
   createdTime: Date,
   updatedTime: Date,
+  syncedTime: Date,
 
   // Status
   isPublished: Boolean, // still scheduled to be published
@@ -23,7 +22,10 @@ module.exports = {
     message: String,
 
     // Status
-    postType: String, // link, status, photo, video, offer
+    postType: {
+      type: String,
+      enum: ['link', 'status', 'photo', 'video', 'offer']
+    },
     statusType: String, // type of update status
     story: String, // story description, not written by users
 
@@ -49,7 +51,10 @@ module.exports = {
     coverPhoto: String,
 
     // Status
-    albumType: String, // app, cover, profile, mobile, wall, normal, album
+    albumType: {
+      type: String,
+      enum: ['app', 'cover', 'profile', 'mobile', 'wall', 'normal', 'album']
+    },
     count: Number
   },
 
