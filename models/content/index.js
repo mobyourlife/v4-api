@@ -6,6 +6,8 @@ const Schema = mongoose.Schema
 const FacebookSchema = require('./facebook')
 
 const ContentSchema = new Schema({
+  siteId: { type: Schema.Types.ObjectId, required: true },
+
   // From which social network this content came from
   // facebook, instagram, linkedin, twitter
   sourceType: {

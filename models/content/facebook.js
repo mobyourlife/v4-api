@@ -1,6 +1,9 @@
 // Content schema for Facebook
 
 module.exports = {
+  // Content owner
+  fanpageId: { type: String, required: true },
+
   // Content type
   contentType: {
     type: String,
