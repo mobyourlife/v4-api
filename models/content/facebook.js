@@ -54,7 +54,12 @@ module.exports = {
     name: String,
     description: String,
     location: String,
-    coverPhoto: String,
+
+    coverPhoto: {
+      _id: { type: String, required: true },
+      createdTime: Date,
+      name: String
+    }
 
     // Status
     albumType: {
