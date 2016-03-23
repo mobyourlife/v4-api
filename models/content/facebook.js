@@ -59,7 +59,7 @@ module.exports = {
       _id: { type: String, required: true },
       createdTime: Date,
       name: String
-    }
+    },
 
     // Status
     albumType: {
